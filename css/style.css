@@ -1,0 +1,153 @@
+/* Put any custom CSS styles here.  */
+/* Be sure to delete the <style> tag in index.html if you want to use this stylesheet. */
+:root {
+  --cardBackground: #fff;
+  --bodyBackground: #e5e5e5
+}
+
+body {
+  margin: 0;
+  font-family: "Noto Sans", system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+    sans-serif;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  background-color: var(--bodyBackground);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  min-width: 100vw;
+}
+
+.card {
+  width: 22.66em;
+  border-radius: .5em;
+  overflow: hidden;
+  background-color: var(--cardBackground);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+/* Grid Layout Setup */
+.container > .card-grid-template {
+  display: grid;
+  grid-template-areas:
+    'blog-image'
+    'metadata-content'
+}
+
+.card-blog-image {
+  grid-area: blog-image;
+  object-fit: cover;
+}
+
+/* Header Metadata styles */
+.card-metadata-content {
+  grid-area: metadata-content;
+  
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  padding: 1em;
+}
+
+/* Header h3 styles */
+.card-blog-header > h3 {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+
+  font-weight: 600;
+}
+
+/* Summarise Content Styles */
+.card-blog-summarise {
+  /* Treats large content */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+
+  color: #343a40;
+  word-break: normal;
+}
+
+/* Actions Content Styles */
+.card-blog-card-actions {
+  display: flex;
+  flex-direction: row;
+}
+.card-blog-card-actions > span {
+  padding-top: 1em;
+
+  cursor: pointer;
+  font-weight: 500;
+  color: #3a0ca3;
+
+  transition-duration: 500ms;
+  overflow: hidden;
+}
+
+.card-blog-card-actions > span:hover {
+  color: #9b5de5;
+
+  font-weight: 500;
+  font-size: 1em;
+  line-height: 1.5em;
+}
+
+/* Badge Content Styles */
+.card-blog-badge-area > .badge {
+  padding: .2em .5em;
+  background-color: #f0fdf4;
+
+  color: #15803d;
+  font-size: smaller;
+
+  border-radius: 1em;
+  border-color: #7bf1a8;
+  border-width: 1px;
+}
+
+/* Applying media queries */
+@media screen and (max-width: 1280px){
+  .container {
+    margin-top: 7.5em;
+    padding: 2em
+  }
+}
+@media screen and (min-width: 768px){
+  .container {
+    margin-top: 7.5em;
+    padding: 2em
+  }
+}
+
+@media screen and (min-width: 375px){
+  .container {
+    margin-top: 7.5em;
+    padding: 1em
+  }
+}
+
+/* Credits Section */
+.credits {
+  color: #777;
+  position: fixed;
+  bottom: 24px;
+  left: 24px;
+  font-size: 11px;
+  text-align: center;
+}
+
+.credits a {
+  color: #000;
+  font-weight: bold;
+}
